@@ -3,11 +3,6 @@
 # We're using the random_id generator to create a unique ID to be used for
 # unique names of resources in this lab
 resource "random_id" "randomId" {
-    keepers = {
-        # Generate a new ID only when a new resource group changes or 
-        # is created for the first time
-        resource_group = "${azurerm_resource_group.myterraformgroup.name}"
-    }
 
     byte_length = 8
 }
