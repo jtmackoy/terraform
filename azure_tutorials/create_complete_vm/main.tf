@@ -54,6 +54,14 @@ resource "azurerm_network_security_group" "myterraformnsg" {
         environment = "Terraform Demo"
     }
 }
+# Create a subnet to use with the NIC to be created
+resource "azurerm_subnet" "myterraformsubnet" {
+    name                 = "mySubnet"
+    resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
+    virtual_network_name = "${azurerm_virtual_network.myterraformnetwork.name}"
+    address_prefix       = "10.0.2.0/24"
+}
+
 # Create azure network interface for the VM and bind the Public IP to it
 resource "azurerm_network_interface" "myterraformnic" {
     name                = "myNIC"
