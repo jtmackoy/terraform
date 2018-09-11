@@ -54,7 +54,18 @@ resource "azurerm_network_security_group" "myterraformnsg" {
         environment = "Terraform Demo"
     }
 }
-# Create a subnet to use with the NIC to be created
+# Create the virtual network to be used with the NIC
+resource "azurerm_virtual_network" "myterraformnetwork" {
+    name                = "myVnet"
+    address_space       = ["10.0.0.0/16"]
+    location            = "eastus"
+    resource_group_name = "${azurerm_resource_group.myterraformgroup.name}"
+
+    tags {
+        environment = "Terraform Demo"
+    }
+}
+# Create a subnet to use with the virtual network
 resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = "${azurerm_resource_group.myterraformgroup.name}"
