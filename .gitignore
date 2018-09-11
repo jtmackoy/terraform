@@ -1,0 +1,5 @@
+azure_tutorials/create_complete_vm/terraform.tfstate.backup
+azure_tutorials/create_complete_vm/terraform.tfstate
+azure_tutorials/create_complete_vm/.terraform/plugins/windows_amd64/lock.json
+azure_tutorials/create_complete_vm/.terraform/plugins/windows_amd64/terraform-provider-azurerm_v1.14.0_x4.exe
+azure_tutorials/create_complete_vm/.terraform/plugins/windows_amd64/terraform-provider-random_v2.0.0_x4.exe
